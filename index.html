@@ -1,40 +1,14 @@
-<!DOCTYPE html>
 <html>
 <head>
-<!-- <script>
+<script>
 function newDoc() {
     window.location = "https://branchster.app.link/JM76WYbyfG"
 }
-</script -->
-
-Coffee Dates!
+</script>
 </head>
 <body>
-<br>
-<input id="coord1" type="text">
-<br>
-<input id="coord2" type="text">
-<!-- <br> -->
-<!-- <p id="result">wow</p>
-<p id="response">please</p> -->
-<script>
 
-function UserAction() {
-	var name1 = document.getElementById("coord1").value;
-	var name2 = document.getElementById("coord2").value;
-	var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + name1 + "," + name2 + "&radius=300&type=restaurant&keyword=chinese&key=AIzaSyA482kd3Jg_gbJsyV8sEVI_CMlC9ul4EgI"
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", url, false);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send();
-    var response = JSON.parse(xhttp.responseText);
-    // document.getElementById("response").innerHTML= response;
-}
-
-</script>
-<br>
-<input type="button" value="get api" onclick="UserAction()">
+<input type="button" value="Load new document" onclick="newDoc()">
 
 </body>
 </html>
