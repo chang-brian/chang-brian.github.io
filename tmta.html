@@ -20,12 +20,6 @@
         };
         var options = {};
         var callback = function(err, result) {
-            if (err) {
-                alert("Sorry, something went wrong.");
-            }
-            else {
-                alert("SMS sent!");
-            }
         };
         branch.sendSMS(phone, linkData, {make_new_link: false}, callback);
         form.phone.value = "";
