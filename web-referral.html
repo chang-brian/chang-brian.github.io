@@ -2,9 +2,9 @@
 <html>
  	<body>
 	<h1>REFERRING USER</h1>
-	<input id="email" type="text">
+	<input id="referring" type="text">
 	<br>
- 	<input type="button" value="login" onclick="login()">
+ 	<input type="button" value="login" onclick="loginReferring()">
 	<br>
 	<input id="button" type="button" value="share" onclick="share()">
 	<br>
@@ -13,11 +13,11 @@
 	<input type="button" value="logout" onclick="logout()">
 	<p>
 	<h1>REFERRED USER</h1>
-	<input id="email" type="text">
+	<input id="referred" type="text">
 	<br>
- 	<input type="button" value="login" onclick="login()">
+ 	<input type="button" value="login" onclick="loginReferred()">
  	<br>
-	<input type="button" value="purchase" onclick="purchase()">
+	<input type="button" value="trigger" onclick="triggerEvent()">
 	<br>
 	<input type="button" value="logout" onclick="logout()">
 
@@ -25,13 +25,19 @@
  	(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
  	branch.init('YOUR_KEY_HERE');
 
-	function purchase() {
-		branch.track('YOUR_CUSTOM_EVENT_HERE');
+	function triggerEvent() {
+		branch.track('YOUR_EVENT_HERE');
 		alert("success!");
 	}
 
-	function login() {
-		var id = document.getElementById("email").value;
+	function loginReferring() {
+		var id = document.getElementById("referring").value;
+		branch.setIdentity(id);
+		alert("success!");
+	}
+
+	function loginReferred() {
+		var id = document.getElementById("referred").value;
 		branch.setIdentity(id);
 		alert("success!");
 	}
