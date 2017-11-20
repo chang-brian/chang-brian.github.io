@@ -7,8 +7,6 @@
     <script type="text/javascript">
 
     function branchTestFunction() {
-      var telegraphLiveAppKey = 'key_live_kgFjVjI3BHbfiD2ahbAprdfjDubrjwCx',
-        digitalEditionKey = 'key_live_kewl2z6z3givXcCT1mXWAndjAsd4yHTw',
         userAgentLowerCase = navigator.userAgent.toLowerCase(),
         isiOSOrAndroidMobile = ( /(?:iphone|ipod)|android.*mobile/i.test( userAgentLowerCase ) ),
         isiOSOrAndroid = ( /(iphone|ipod|ipad|android)/i.test( userAgentLowerCase ) );
@@ -16,11 +14,11 @@
       console.log("User Agent: " + userAgentLowerCase);
 
       if ( isiOSOrAndroidMobile ) {
-        document.getElementById("demo").innerHTML = "Live App Branch Banner";
+        document.getElementById("demo").innerHTML = "iPhone or Android phone";
       } else {
         //need to remove any windows / blackberries etc.
         if (isiOSOrAndroid) {
-          document.getElementById("demo").innerHTML = "Digi Edition Branch Banner";
+          document.getElementById("demo").innerHTML = "iPad or Tablet";
         } else {
           document.getElementById("demo").innerHTML = "Not iOS or Android";
         }
