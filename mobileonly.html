@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>branch JS test</title>
+    <script type="text/javascript">
+
+    function branchTestFunction() {
+      var telegraphLiveAppKey = 'key_live_kgFjVjI3BHbfiD2ahbAprdfjDubrjwCx',
+        digitalEditionKey = 'key_live_kewl2z6z3givXcCT1mXWAndjAsd4yHTw',
+        userAgentLowerCase = navigator.userAgent.toLowerCase(),
+        isiOSOrAndroidMobile = ( /(?:iphone|ipod)|android.*mobile/i.test( userAgentLowerCase ) ),
+        isiOSOrAndroid = ( /(iphone|ipod|ipad|android)/i.test( userAgentLowerCase ) );
+
+      console.log("User Agent: " + userAgentLowerCase);
+
+      if ( isiOSOrAndroidMobile ) {
+        document.getElementById("demo").innerHTML = "Live App Branch Banner";
+      } else {
+        //need to remove any windows / blackberries etc.
+        if (isiOSOrAndroid) {
+          document.getElementById("demo").innerHTML = "Digi Edition Branch Banner";
+        } else {
+          document.getElementById("demo").innerHTML = "Not iOS or Android";
+        }
+      }
+    }
+
+  </script>
+  </head>
+  <body onload="branchTestFunction()">
+
+	<p id="demo" style="font-size:600%;">Page Load</p>
+  </body>
+</html>
