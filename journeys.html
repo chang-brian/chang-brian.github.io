@@ -6,27 +6,20 @@
 
 <body>
 
-  <a id="anchor" href="/journeys2.html">Your deep link</a>
-  <br>
-  <input type="button" value="first" onclick="getFirst()">
-  <br>
-  <input type="button" value="data" onclick="getData()">
-
   <script type="text/javascript">
   (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
-    branch.init('key_live_bgCxN191LeyXKuRnTAMlRfebAtl1RBc7');
+    branch.init('key_live_hkDytPACtipny3N9XmnbZlapBDdj4WIL');
+    alert("hi");
 
-    function getFirst() {
-      var res = branch.first(function(err, data) {
-        alert(JSON.stringify(data));
-      });
+    var listener = function(event) {
+      alert("Hi, I am the Listener!");
     }
 
-    function getData() {
-      var res = branch.data(function(err, data) {
-        alert(JSON.stringify(data));
-      });
-    }
+    // Specify an event to listen for
+    branch.addListener('willShowJourney', listener);
+
+    // Listen for all events
+    branch.addListener(listener);
 
   </script>
 
