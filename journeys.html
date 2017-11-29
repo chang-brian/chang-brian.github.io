@@ -15,6 +15,10 @@
       alert("Hi, I am the Listener!");
     }
 
+    var listener = function(event) {
+      alert("Hi, I am the 2nd Listener!");
+    }
+
     // Specify an event to listen for
     branch.addListener('willShowJourney', listener);
 
