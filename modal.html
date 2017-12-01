@@ -1,35 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-  <title>AlgoliaModal</title>
-	<script
-  	src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-  	integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-  	crossorigin="anonymous"></script>
+<title>Modal</title>
+<script src="jquery-3.2.1.js"></script>
+
+<style>
+#test1 {
+display:none;
+};
+</style>
+
+
+<script>
+$(document).ready(function() {
+	$(".btn").click(function() {
+		$("#test1").show();
+	});
+});
+</script>
+
 </head>
 
 <body>
-	<a href="http://docs.branch.io/" id="test">Search on Docs</a><br>
+<p> This will explain the concept of IFrame. </p>
 
-	<div id="somediv" title="this is a dialog" style="display:none;">
-    	<iframe id="thedialog" width="350" height="350"></iframe>
-	</div>
-	<script>
-	    $(document).ready(function () {
-	        $("#test").click(function () {
-	            $("#thedialog").attr('src', $(this).attr("href"));
-	            $("#somediv").dialog({
-	                width: 400,
-	                height: 450,
-	                modal: true,
-	                close: function () {
-	                    $("#thedialog").attr('src', "about:blank");
-	                }
-	            });
-	            return false;
-	        });
-	    });
-	</script>
+<p> The following is the content of one of my previous HTML nuggets </p>
 
+
+<iframe src="https://docs.branch.io/#dialog-search" id="test1"></iframe>
+
+<button class="btn" id="button1">Show Webpage</button>
 </body>
+
 </html>
