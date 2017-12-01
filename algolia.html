@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Algolia</title>
+  <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+</head>
+
+<body>
+
+	<h2>Search</h2>
+	<input type="text" placeholder="search docs..." id="algolia-doc-search" autofocus="" class="ds-input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="true" aria-labelledby="algolia-doc-search" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;">
+
+	<div class="ds-dataset-1">
+	  <div class="algolia-docsearch-suggestion">
+	    <div class="algolia-docsearch-suggestion--wrapper">
+	        <div class="algolia-docsearch-suggestion--content algolia-docsearch-suggestion--no-results">
+	            <div class="algolia-docsearch-suggestion--title">
+	                <div class="algolia-docsearch-suggestion--text">
+	                    No results found for query <b>"brrsd"</b>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	  </div>
+	  
+	  <div class="algolia-docsearch-footer">
+	    Search by <a class="algolia-docsearch-footer--logo" href="https://www.algolia.com/docsearch">Algolia</a>
+	  </div>
+	 </div>
+
+	<script>
+  	docsearch({apiKey:"887017d17a2c1e9490ad2c44caa7e817",indexName:"branchmetrics",inputSelector:"#algolia-doc-search",debug:"True",algoliaOptions:{hitsPerPage:"15"}})
+	</script>
+</body>
+</html>

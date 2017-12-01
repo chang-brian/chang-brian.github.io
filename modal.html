@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AlgoliaModal</title>
+	<script
+  	src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  	integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  	crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<a href="http://docs.branch.io/" id="test">Search on Docs</a><br>
+
+	<div id="somediv" title="this is a dialog" style="display:none;">
+    	<iframe id="thedialog" width="350" height="350"></iframe>
+	</div>
+	<script>
+	    $(document).ready(function () {
+	        $("#test").click(function () {
+	            $("#thedialog").attr('src', $(this).attr("href"));
+	            $("#somediv").dialog({
+	                width: 400,
+	                height: 450,
+	                modal: true,
+	                close: function () {
+	                    $("#thedialog").attr('src', "about:blank");
+	                }
+	            });
+	            return false;
+	        });
+	    });
+	</script>
+
+</body>
+</html>
