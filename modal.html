@@ -2,35 +2,77 @@
 
 <html>
 <head>
-<title>Modal</title>
-<script src="jquery-3.2.1.js"></script>
+
+
+<title>Search </title>
+<script src="jquery-3.2.1.min.js"></script>
 
 <style>
-#test1 {
-display:none;
-};
-</style>
+#docs {
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	left: 50%;
+	margin-left: -25%;
+    box-shadow:0px 2px 6px rgba(0,0,0,1);
+    border-radius:3px;
+	background: #fff;
+}
 
+#modal-cont{
+	display:none;
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.75);
+}
+
+</style>
 
 <script>
 $(document).ready(function() {
-	$(".btn").click(function() {
-		$("#test1").show();
+	$("#search").click(function() {
+		$("#docs").attr("src", $("#docs").attr("src"));
+		$("#modal-cont").fadeIn(250);
+	});
+	$("#modal-cont").click(function() {
+		$("#modal-cont").fadeOut(250);
 	});
 });
+
+$(document).keydown(function(e) {
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+     	console.log("why");
+        $("#modal-cont").fadeOut(250);
+    }
+});
+
+// $(document.getElementById('modal-cont')).keydown(function(e){
+//                 if(e.keyCode == 27){
+//                     $("#modal-cont").hide();
+//                 }
+// });
+
 </script>
 
 </head>
 
 <body>
-<p> This will explain the concept of IFrame. </p>
 
-<p> The following is the content of one of my previous HTML nuggets </p>
+<!-- <div id="navbar">
+  <a href="#home">Home</a>
+  <a href="#">News</a>
+  <a href="#contact">Contact</a>
+</div> -->
 
 
-<iframe src="https://docs.branch.io/#dialog-search" id="test1"></iframe>
+<div id="modal-cont">
+	<iframe src="https://docs.branch.io/#dialog-search" id="docs"></iframe>
+</div>
 
-<button class="btn" id="button1">Show Webpage</button>
+<button id="search">Search</button>
 </body>
 
 </html>

@@ -2,6 +2,7 @@
 <head>
   <script type="text/javascript">
     var x = navigator.userAgent
+    var y = document.referrer
   </script>
 </head>
 
@@ -10,6 +11,10 @@
       user agent is:
       <script type="text/javascript">
         document.write(x)
+      </script>
+      request header is:
+      <script type="text/javascript">
+      	document.write(y)
       </script>
     </h1>
 </body>
