@@ -6,39 +6,33 @@
   	<script type="text/javascript">
 	// load the Branch SDK file
 	(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
-	branch.init('key_live_ibBrdAODrab67hQN8eBC7gdbvwbEh6GZ');
-	branch.deepview(
+	branch.init('key_live_bgCxN191LeyXKuRnTAMlRfebAtl1RBc7', 
 		{
-	      channel: 'facebook',
-	      data: {
-	            mydata: 'content of my data',
-	            foo: 'bar',
-	            '$deeplink_path': 'item_id=12345',
-	            '$uri_redirect_mode': 2
-	      	},
-	      feature: 'dashboard',
-	      stage: 'new user',
-	      tags: [ 'tag1', 'tag2' ],
-		},
-	{},
-	function(err) {
-	     console.log(err || 'no error');
-	}
-	);
+        	'make_new_link' : true
+    	}
+    );
+
+	function getQueryStrings(url) {
+  		var params = url.split("?")[1];
+  		var paramArray = params.split("&");
+  		var res = {};
+  		for (i=0; i<paramArray.length; i++) {
+  			var key = paramArray[i].split("=")[0];
+  			var val = paramArray[i].split("=")[1];
+  			res[key] = val;
+  		}
+  		console.log(res);
+  		return res;
+	};
+
+	var dict = getQueryStrings(window.top.location.href);
 
 	branch.setBranchViewData({
-    	data: {
-        	'$deeplink_path': 'picture/12345',
-        	'picture_id': '12345',
-        	'user_id': '45123'
-    	}
+    	data: dict
 	});
 	</script>
 </head>
 <body>
-	<h1>No Journeys Appears</h1>
-	<a id='downloadapp' onclick='branch.deepviewCta()'>View this in app</a>
-	<a id="test" href="https://chang-brian.github.io/internet.html">reload</a>
-	<a id="index" href="index.html">index</a>
+
 </body>
 </html>
