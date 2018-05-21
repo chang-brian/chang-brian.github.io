@@ -1,71 +1,41 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-<meta charset="UTF-8">
-    <script type="text/javascript">
-
-        (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
-
-        branch.init('key_live_hkDytPACtipny3N9XmnbZlapBDdj4WIL');
-            function sendSMS(form) {
-                var phone = form.phone.value;
-                var linkData = {
-                    tags: [],
-                    channel: 'Website',
-                    feature: 'TextMeTheApp',
-                    data: {
-                        'foo': 'bar'
-                    }
-                };
-                var options = {};
-                var callback = function(err, result) {
-                    if (err) {
-                        var error = err.toString().split(" ");
-                        var code = error[error.length -1];
-                        if (code == "429") {
-                            alert("Too many tries!");
-                        }
-                        else {
-                            alert(err);
-                        }
-                    }
-                    else {
-                        alert("SMS sent!");
-                    }
-                };
-                branch.sendSMS(phone, linkData, options, callback);
-                form.phone.value = "";
-            }
-
-        branch.deepview(
-            {
-                channel: 'facebook',
-                data: {
-                    mydata: 'content of my data',
-                    foo: 'bar',
-                    '$deeplink_path': 'item_id=12345',
-                    '$ios_passive_deepview': 'branch_default'
-                },
-                feature: 'dashboard',
-                stage: 'new user',
-                tags: [ 'tag1', 'tag2' ],
-            },
-            {
-                make_new_link: true,
-                open_app: true
-            },
-            function(err) {
-                console.log(err || 'no error');
-            }
-        );
-    </script>
-</head>
+<html>
+<title>This is a test</title>
 <body>
-        Send SMS
-        <form onsubmit="sendSMS(this); return false;">
-            <input id="phone" name="phone" type="tel" placeholder="(650) 123-4567" />
-            <br/>
-            <input type="submit"/>
-        </form>
-    </body>
+<h1> Send SMS test </h1>
+<script>
+  // load Branch
+  (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent".split(" "), 0);
+    // init Branch
+  branch.init('key_live_dfgA2ZH3kiAGSdF4uFVgYnkezCp8jV7D', function(err, data) {
+    console.log(err);
+    console.log(data);
+  });
+  function sendSMS(form) {
+        var phone = form.phone.value;
+        var linkData = {
+            tags: [],
+            channel: 'Website',
+            feature: 'TextMeTheApp',
+            data: {
+                'foo': 'bar'
+            }
+        };
+        var options = {};
+        var callback = function(err, result) {
+        };
+        branch.sendSMS(phone, linkData, {make_new_link: false}, callback);
+        form.phone.value = "";
+    }
+</script>
+
+Send SMS
+<form onsubmit="sendSMS(this); return false;">
+   <input id="phone" name="phone" type="tel" placeholder="(650) 123-4567" />
+   <br/>
+   <input type="submit"/>
+</form>
+
+
+</body>
+
 </html>
