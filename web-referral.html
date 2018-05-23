@@ -28,6 +28,10 @@
 
    	branch.init('key_live_bgCxN191LeyXKuRnTAMlRfebAtl1RBc7');
 
+   	branch.data(function(err, data) {
+  		console.log(err, data); 
+	});
+
 	function triggerEvent() {
 		branch.track('testing');
 		alert("success!");
