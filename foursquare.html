@@ -9,10 +9,12 @@
     // init Branch
   branch.init('key_live_lliWxiC8xFlV1hNhLeKuSpkeuyioNgiy');
       
-      	var link = 'https://foursquare.app.link/?feature=chrome-open-app-button&%24deeplink_path=venues%2Fexplore%3Fquery%3DFood&channel=mobileweb'
- 	  	document.getElementById('anchor').onclick = function() {
-			window.open(link);
-		};
+      var link = 'https://foursquare.app.link/?feature=chrome-open-app-button&%24deeplink_path=venues%2Fexplore%3Fquery%3DFood&channel=mobileweb'
+ 		// document.getElementById('anchor').onclick = function() {
+			// 	window.open(link);
+			// };
+          document.getElementById('anchor').href = link;
+          document.getElementById('anchor').innerHTML = link;
 
 </script>
 </body>
