@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Journey Test</title>
-</head>
-
-<body>
+  <title>Journeys Test</title>
+  <meta property="og:image" content="https://x.pac-12.com/profiles/pac12/modules/features/pac12_base/images/pac-12-placeholder.jpg" />
+  <meta property="og:title" content="Westminster (Utah) at Utah" />
+  <meta property="og:description" content="Westminster (Utah) at Utah, Women&#039;s Basketball, 10/31/2018" />
 
   <script type="text/javascript">
-  (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
-    branch.init('key_live_gaAt9hAcUESdCRaXYt1Nsfdiyrn5MfYy');
+    (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
+
+
+    branch.init('key_live_bgCxN191LeyXKuRnTAMlRfebAtl1RBc7', function(err, data) {
+
+      var data1 = document.querySelector('meta[property="og:image"]');
+      var image = data1 ? data1.getAttribute("content") : null;
+
+      var data2 = document.querySelector('meta[property="og:title"]');
+      var title = data2 ? data2.getAttribute("content") : null;
+
+      var data3 = document.querySelector('meta[property="og:description"]');
+      var description = data3 ? data3.getAttribute("content") : null;
+
+      branch.setBranchViewData({
+        campaign: 'landing',
+        channel: 'facebook',
+        feature: 'dashboard',
+        data: {
+          'background': image,
+          '$journeys_title': title,
+          '$journeys_description': description
+        }
+      });
+    });
   </script>
 
 
-</body>
+</head>
 
 </html>
