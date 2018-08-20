@@ -8,25 +8,16 @@
   (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
     branch.init('key_live_bgCxN191LeyXKuRnTAMlRfebAtl1RBc7');
 
-    branch.banner(
-      {
-        icon: 'http://icons.iconarchive.com/icons/wineass/ios7-redesign/512/Appstore-icon.png',
-        title: 'Demo App',
-        description: 'Branch Demo app!',
-        openAppButtonText: 'Open',
-        downloadAppButtonText: 'Download',
-        reviewCount: 1000, // Review count
-        rating: 5, // Average rating from 0 to 5 in increments of .5
-        iframe: true, // Show banner in an iframe if CSS on your page is conflicting
-        showMobile: true, // true by default, just set here for an example
-        showDesktop: true, // true by default, just set here for an example
-        disableHide: false, // false by default, just set here for an example
-        forgetHide: false // false by default, just set here for an example
-      } // Banner Options
-    );
-
+    // function myfunction() {
+    //   branch.track('pageview', {'disable_entry_animation': true, 'disable_exit_animation': true});
+    // }
 
   </script>
 
 </head>
+<body>
+
+  <!-- <button onclick="setTimeout(myfunction(), 5000)">Try it</button> -->
+</body>
+
 </html>
